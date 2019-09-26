@@ -53,12 +53,20 @@ public class SomeSwitches {
 
 /*    static int numMax(int a, int b) {
         return a == b ? a : a > b ? a : b;
+    }
+
+    static double numMax(int a, double b) {
+        return a == b ? a : a > b ? a : b;
+    }
+
+    static double numMax(double a, int b) {
+        return a == b ? a : a > b ? a : b;
     }*/
 
     static void shownumMax() {
         System.out.println("Input a, b:");
-        int a = isInt();
-        int b = isInt();
+        double a = isDouble();
+        double b = isDouble();
 
         System.out.println(numMax(a, b));
         goOn();
@@ -94,34 +102,29 @@ public class SomeSwitches {
     }
 
 /*    static Object isDoubleInt() {
-        int i = 0;
-        double j = 0;
-
+        Object[] id = new Object[1];
         boolean b = false;
 
-        while (b == false) {
+        while (!b) {
             if (!sc.hasNextDouble() && !sc.hasNextInt()) {
                 sc.next();
                 System.out.println("Re-input: ");
-            } else {
-                if (sc.hasNextInt()) {
-                    i = sc.nextInt();
-                    return i;
-                }
-                if (sc.hasNextDouble()) {
-                    j = sc.nextDouble();
-                    return j;
-                }
+            } else if (sc.hasNextInt()) {
+                id[0] = sc.nextInt();
+                b = true;
+            } else if (sc.hasNextDouble()) {
+                id[0] = sc.nextDouble();
                 b = true;
             }
         }
+        return id[0];
     }*/
-
-/*    static double isDouble() {
+    
+    static double isDouble() {
         double i = 0;
         boolean b = false;
 
-        while (b == false) {
+        while (!b) {
             if (!sc.hasNextDouble()) {
                 sc.next();
                 System.out.println("Re-input: ");
@@ -131,13 +134,13 @@ public class SomeSwitches {
             }
         }
         return i;
-    }*/
+    }
 
     static int isInt() {
         int i = 0;
         boolean b = false;
 
-        while (b == false) {
+        while (!b) {
             if (!sc.hasNextInt()) {
                 sc.next();
                 System.out.println("Re-input: ");
@@ -153,7 +156,7 @@ public class SomeSwitches {
         int i = 0;
         boolean b = false;
 
-        while (b == false) {
+        while (!b) {
             if (!sc.hasNextInt()) {
                 sc.next();
                 System.out.println("Re-input: ");
